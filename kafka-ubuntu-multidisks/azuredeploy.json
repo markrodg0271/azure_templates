@@ -68,7 +68,7 @@
   },
   "variables": {
     "templateBaseUrl": "https://raw.githubusercontent.com/markrodg0271/azure_templates/master/kafka-ubuntu-multidisks/",
-    "sharedTemplateUrl": "[concat(variables('templateBaseUrl'), 'shared-resou.json')]",
+    "sharedTemplateUrl": "[concat(variables('templateBaseUrl'), 'shared-resources.json')]",
     "tshirtSizeSmall": {
       "vmSize": "Standard_A1",
       "diskSize": 1023,
@@ -157,7 +157,7 @@
     "jumpboxTemplateUrl": "[concat(variables('templateBaseUrl'), variables(concat('jumpboxTemplate',parameters('jumpbox'))))]",
     "osSettings": {
       "scripts": [
-        "[concat(variables('templateBaseUrl'), 'kafka-cluster-install.sh')]",
+        "[concat(variables('templateBaseUrl'), 'kafka-cluster-install.shnogood')]",
         "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/shared_scripts/ubuntu/vm-disk-utils-0.1.sh"
       ],
       "imageReference": {
