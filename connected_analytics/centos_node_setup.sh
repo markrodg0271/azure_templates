@@ -84,11 +84,14 @@ sed -i -e 's@umask 022$@umask 0027@' /etc/profile
 
 # Add the server to the domain
 echo "## Adding the server to the domain"
+kinit -kt sv-qa_sssd_bind.keytab sv-qa_sssd_bind@HDPQA.HONEYWELL.COM
+realm join HDPQA.HONEYWELL.COM
 #realm join --user=$6@$5 $5
-##TODO: How to insert password here
 
-#sed -i -e 's@^use_fully_qualified_names = True@use_fully_qualified_names = False@' /etc/sssd/sssd.conf
+sed -i -e 's@^use_fully_qualified_names = True@use_fully_qualified_names = False@' /etc/sssd/sssd.conf
+echo 'enumerate = True' >> /etc/sssd/sssd/conf
 
 echo '## Restarting sssd'
-#service sssd restart
+service sssd restart
+
 echo '## COMPLETE ##'
