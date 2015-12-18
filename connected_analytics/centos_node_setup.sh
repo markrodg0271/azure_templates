@@ -30,7 +30,7 @@ bash centos-vm-disk-utils.sh -b /datadisks
 
 # Install required elements
 echo "## Installing required elements"
-yum install -y realmd sssd samba samba-common oddjob oddjob-mkhomedir adcli
+yum install -y realmd sssd samba samba-common oddjob oddjob-mkhomedir adcli krb5-workstation
 
 # Add the AD IP adddresses to the hosts file
 cp /etc/hosts /tmp/hosts.backup
