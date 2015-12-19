@@ -88,6 +88,9 @@ kinit -kt sv-qa_sssd_bind.keytab sv-qa_sssd_bind@HDPQA.HONEYWELL.COM
 realm join HDPQA.HONEYWELL.COM
 #realm join --user=$6@$5 $5
 
+echo '##Removing the keytab file'
+rm sv-qa_sssd_bind.keytab
+
 sed -i -e 's@^use_fully_qualified_names = True@use_fully_qualified_names = False@' /etc/sssd/sssd.conf
 echo 'enumerate = True' >> /etc/sssd/sssd/conf
 
