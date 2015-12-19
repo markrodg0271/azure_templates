@@ -92,7 +92,7 @@ echo '##Removing the keytab file'
 rm sv-qa_sssd_bind.keytab
 
 sed -i -e 's@^use_fully_qualified_names = True@use_fully_qualified_names = False@' /etc/sssd/sssd.conf
-echo 'enumerate = True' >> /etc/sssd/sssd/conf
+echo 'enumerate = True' >> /etc/sssd/sssd.conf
 
 echo '## Restarting sssd'
 service sssd restart
